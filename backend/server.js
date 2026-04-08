@@ -13,7 +13,7 @@ app.use(express.json());
 const db = mysql.createConnection({
   host: "localhost",
   user: "appuser", // Change to your MySQL username
-  password: "secure_password_123", // Change to your MySQL password
+  password: "secure_password_123ja", // Change to your MySQL password
   database: "hello_world_db",
 });
 

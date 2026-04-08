@@ -12,3 +12,7 @@ CREATE TABLE IF NOT EXISTS messages (
 
 -- Insert hello world message
 INSERT INTO messages (message) VALUES ('Hello, World!');
+
+CREATE USER IF NOT EXISTS 'appuser'@'localhost' IDENTIFIED BY 'secure_password_123ja';
+GRANT ALL PRIVILEGES ON hello_world_db.* TO 'appuser'@'localhost';
+FLUSH PRIVILEGES;
