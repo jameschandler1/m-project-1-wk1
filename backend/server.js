@@ -37,7 +37,7 @@ app.get("/api/hello", (req, res) => {
     if (results.length > 0) {
       res.json({ message: results[0].message });
     } else {
-      res.json({ message: "Hello, World!" }); // Fallback
+      res.json({ message: "MESSAGE NOT FROM DATABASE!" }); // Fallback
     }
   });
 });
