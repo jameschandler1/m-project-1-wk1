@@ -1,18 +1,19 @@
--- Create database
-CREATE DATABASE IF NOT EXISTS hello_world_db;
+-- Database setup script
+-- Run this to create database and initial data
 
--- Use the database
+CREATE DATABASE IF NOT EXISTS hello_world_db;
 USE hello_world_db;
 
--- Create table
 CREATE TABLE IF NOT EXISTS messages (
   id INT AUTO_INCREMENT PRIMARY KEY,
   message VARCHAR(255) NOT NULL
 );
 
 -- Insert hello world message
-INSERT INTO messages (message) VALUES ('Hello, World!');
+INSERT INTO messages (message) VALUES ('Hello, World!')
+ON DUPLICATE KEY UPDATE message = 'Hello, World!';
 
-CREATE USER IF NOT EXISTS 'root'@'localhost' IDENTIFIED BY 'my_new_pass';
-GRANT ALL PRIVILEGES ON hello_world_db.* TO 'root'@'localhost';
+-- Create application user (not root for security)
+CREATE USER IF NOT EXISTS 'app_user'@'localhost' IDENTIFIED BY 'app_password123';
+GRANT ALL PRIVILEGES ON hello_world_db.* TO 'app_user'@'localhost';
 FLUSH PRIVILEGES;
