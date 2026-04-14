@@ -16,8 +16,8 @@ module.exports = {
     },
     {
       name: "frontend",
-      script: "serve",
-      args: "-s frontend/build -l 3000",
+      script: "npx",
+      args: "serve -s frontend/build -l 3000",
       cwd: "/home/ubuntu/m-project-1-wk1",
       env: {
         NODE_ENV: "production",
