@@ -10,7 +10,7 @@
     "start-frontend": "cd frontend && npm start",
     "dev": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
     "build": "cd frontend && npm run build",
-    "setup-db": "sudo mysql < database/init.sql",
+    "setup-db": "sudo mysql -u root -p'JamesKun15!' < database/init.sql",
     "start": "cd backend && node server.js"
   },
   "devDependencies": {
